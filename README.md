@@ -35,3 +35,21 @@
    популярность в базе (число игроков) и уровень лиги (медианная стоимость).
 6. Гражданство - связано с ценой.
 7. Корреляции - сильнее всего `minutes_played`, `appearances`, `goals`.
+
+## Предобработка признаков
+
+- Целевая переменная: `log1p(market_value_in_eur)` — лог-преобразование
+  из-за сильной скошенности распределения цены.
+- Признаки (8 числовых + категориальные):
+  - Числовые: `age`, `height_in_cm`, `goals`, `assists`, `appearances`,
+    `minutes_played`, `yellow_cards`, `red_cards`.
+  - Категориальные: `position`, `sub_position`, `country_of_citizenship`,
+    `league_label` (топ-15 категорий + `Other`).
+- Исключено: `highest_market_value_in_eur`,
+  `market_value_in_eur` (целевая).
+- Масштабирование: `StandardScaler` только для числовых, `fit` только
+  на train.
+- Split: 80/20, `random_state=42`.
+
+Артефакты: `X_train.csv`, `X_test.csv`, `y_train.csv`, `y_test.csv`,
+`scaler.pkl`, `feature_names.pkl`, `num_features.pkl`.
