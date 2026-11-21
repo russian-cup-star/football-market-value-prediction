@@ -53,3 +53,24 @@
 
 Артефакты: `X_train.csv`, `X_test.csv`, `y_train.csv`, `y_test.csv`,
 `scaler.pkl`, `feature_names.pkl`, `num_features.pkl`.
+## Моделирование
+
+Сравнены три модели:
+
+model                MAE_eur     RMSE_eur   R2_log   R2_eur
+XGBoost           8.310883e+05 3.121330e+06 0.654046 0.628916
+Random Forest     8.693856e+05 3.505871e+06 0.628663 0.531851
+Linear Regression 1.199505e+06 4.820760e+06 0.396243 0.114836
+СРАВНЕНИЕ МОДЕЛЕЙ (метрики в евро)
+XGBoost              MAE:      831,088 € | RMSE:    3,121,330 € | R2(log): 0.654
+Random Forest        MAE:      869,386 € | RMSE:    3,505,871 € | R2(log): 0.629
+Linear Regression    MAE:    1,199,505 € | RMSE:    4,820,760 € | R2(log): 0.396
+
+
+**Лучшая модель:** [название] (по MAE).
+
+**Топ-5 важных признаков:** `minutes_played`, `appearances`, `age`,
+`goals`, `league_label_...`.
+
+Файлы: `best_model.pkl`(большой файл сюда не загружен), `best_model_name.pkl`, `model_results.csv`,
+`feature_importance.csv`.
