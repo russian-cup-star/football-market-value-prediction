@@ -69,27 +69,27 @@ def predict_market_value(
         'league_label': league_label,
     }
 
-    # 2. One-hot для категориальных (как в этапе 3)
+    # 2. Числовые признаки — DataFrame с одной строкой
+    X_num = pd.DataFrame([row])[NUM_FEATURES]
+
+    # 3. One-hot вручную по сохранённому списку колонок
     cat_features = ['position', 'sub_position',
                     'country_of_citizenship', 'league_label']
-    df_row = pd.DataFrame([row])
-    df_encoded = pd.get_dummies(df_row[cat_features], drop_first=True, dtype=int)
+    one_hot_cols = [c for c in FEATURE_NAMES if c not in NUM_FEATURES]
+    X_cat = pd.DataFrame(0, index=[0], columns=one_hot_cols)
 
-    # 3. Собираем матрицу признаков в том же порядке, что при обучении
-    X_row = pd.concat([
-        df_row[NUM_FEATURES].reset_index(drop=True),
-        df_encoded.reset_index(drop=True)
-    ], axis=1)
+    for cat in cat_features:
+        col_name = f"{cat}_{row[cat]}"
+        if col_name in X_cat.columns:
+            X_cat.loc[0, col_name] = 1
+        # если колонки нет — категория была базовой (drop_first) или редкой (Other),
+        # тогда все one-hot = 0, это правильно
 
-    # 4. Добавляем отсутствующие one-hot колонки (если категория не встретилась)
-    for col in FEATURE_NAMES:
-        if col not in X_row.columns:
-            X_row[col] = 0
-    X_row = X_row[FEATURE_NAMES]  # порядок колонок как при обучении
+    # 4. Собираем матрицу признаков в том же порядке, что при обучении
+    X_row = pd.concat([X_num, X_cat], axis=1)[FEATURE_NAMES]
 
     # 5. Масштабируем числовые
-    num_idx = [X_row.columns.get_loc(c) for c in NUM_FEATURES]
-    X_row.iloc[:, num_idx] = SCALER.transform(X_row.iloc[:, num_idx])
+    X_row[NUM_FEATURES] = SCALER.transform(X_row[NUM_FEATURES])
 
     # 6. Предсказываем log1p(цену) → переводим в евро
     pred_log = MODEL.predict(X_row)[0]
