@@ -67,7 +67,7 @@ Random Forest        MAE:      869,386 € | RMSE:    3,505,871 € | R2(log): 0
 Linear Regression    MAE:    1,199,505 € | RMSE:    4,820,760 € | R2(log): 0.396
 
 
-**Лучшая модель:** [название] (по MAE).
+**Лучшая модель:** XGBoost (по MAE).
 
 **Топ-5 важных признаков:** `minutes_played`, `appearances`, `age`,
 `goals`, `league_label_...`.
