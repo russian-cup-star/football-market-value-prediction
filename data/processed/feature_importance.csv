@@ -1,0 +1,56 @@
+feature,importance
+age,0.3694830617768627
+appearances,0.20518864754837723
+minutes_played,0.11778328164252563
+league_label_Other,0.07380911196336964
+height_in_cm,0.036120480247143545
+league_label_England — premier-league,0.029951204022525563
+goals,0.015080609390663205
+league_label_Unknown — Unknown,0.014667206194524595
+assists,0.013697597141713626
+yellow_cards,0.00945490207641381
+league_label_Germany — bundesliga,0.00877332737205955
+league_label_Italy — serie-a,0.007893725619941791
+league_label_France — ligue-1,0.007871735465202844
+league_label_Spain — laliga,0.007800509360252033
+league_label_Türkiye — super-lig,0.007614214545926361
+country_of_citizenship_Ukraine,0.007234564233409639
+country_of_citizenship_Brazil,0.007001906546566226
+country_of_citizenship_Other,0.005673372859258278
+league_label_Scotland — scottish-premiership,0.0055130351255554925
+league_label_Ukraine — premier-liga,0.004233876876138132
+country_of_citizenship_Turkey,0.004226889063121674
+position_Midfield,0.003861080365015161
+position_Defender,0.0031887306487674463
+sub_position_Centre-Forward,0.002484760552956512
+sub_position_Goalkeeper,0.002406783555693295
+position_Goalkeeper,0.002336232393257739
+league_label_Portugal — liga-portugal,0.002043777098872245
+sub_position_Centre-Back,0.0019673143952224676
+sub_position_Central Midfield,0.0019524645244523452
+country_of_citizenship_Russia,0.0018140452066375047
+league_label_Denmark — superliga,0.0014514869404554833
+league_label_Netherlands — eredivisie,0.0013957347041389206
+league_label_Russia — premier-liga,0.001215580712471316
+sub_position_Right-Back,0.0012019515530520431
+sub_position_Defensive Midfield,0.0011905950481174807
+red_cards,0.00118416657534583
+sub_position_Right Winger,0.001120057241078198
+sub_position_Left Winger,0.0010956134404260319
+league_label_Greece — super-league-1,0.0010535685152515699
+country_of_citizenship_Denmark,0.0008859998407341263
+sub_position_Left-Back,0.0008727361079306105
+country_of_citizenship_Spain,0.000841425373896826
+country_of_citizenship_Italy,0.0008391005200126875
+country_of_citizenship_Portugal,0.0007974277203163727
+country_of_citizenship_England,0.0007165169966147125
+country_of_citizenship_Greece,0.0006613302613338441
+country_of_citizenship_France,0.0006040605087881408
+country_of_citizenship_Netherlands,0.000601549761737935
+country_of_citizenship_Germany,0.0004816681811002991
+country_of_citizenship_Belgium,0.0003186537408191443
+sub_position_Right Midfield,9.70587288676034e-05
+sub_position_Left Midfield,8.399848693238432e-05
+position_Missing,6.925041011229858e-05
+sub_position_Unknown,5.689845174484008e-05
+sub_position_Second Striker,3.5122366295020106e-05
